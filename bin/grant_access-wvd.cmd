@@ -64,3 +64,4 @@ set result=%datestr:/=-%
 GOTO :END
 
 :END
+echo "DONE!"

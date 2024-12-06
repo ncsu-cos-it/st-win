@@ -1,5 +1,5 @@
 @ECHO OFF
-set USBDRIVE=F
+set USBDRIVE=D
 SET CWRSYNCHOME=C:\Program Files\CWRSYNC
 SET CYGWIN=nontsec
 SET CWOLDPATH=%PATH%
@@ -21,9 +21,6 @@ rsync -rltvzpog "%SRVDIR%/Favorites" .
 rsync -rltvzpog "%SRVDIR%/Music" .
 rsync -rltvzpog "%SRVDIR%/Pictures" .
 rsync -rltvzpog "%SRVDIR%/Videos" .
-echo "Didn't work but now you can type the commands by hand"
-echo "rsync -rltvzpog "%SRVDIR%/Documents" .
-Pause
 
     
 set HOME=

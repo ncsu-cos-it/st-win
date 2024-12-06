@@ -2,7 +2,7 @@
 c:
 cd \temp
 
-if not %USERDOMAIN%=="WOLFTECH" GOTO :END
+if not "%USERDOMAIN%"=="WOLFTECH" GOTO :END
 
 if not exist s:\ GOTO :SDRIVE
 

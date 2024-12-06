@@ -26,7 +26,7 @@ net use s: \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username% /persistent:n
 :PERMS
 echo "Modifying Perms"
 if exist "\\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Documents\.stat" GOTO :END
-Icacls  \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username% /grant:r "WOLFTECH\COS-OU Admins":(OI)(CI)F /T /C /L /Q
+REM Icacls  \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username% /grant:r "WOLFTECH\COS-OU Admins":(OI)(CI)F /T /C /L /Q
 echo "Contacts"
 Icacls  \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Contacts /grant:r "WOLFTECH\COS-OU Admins":(OI)(CI)F /T /C /L /Q
 echo "Desktop"

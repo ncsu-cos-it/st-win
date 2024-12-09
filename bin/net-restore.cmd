@@ -24,4 +24,8 @@ rsync -e ssh -avz %USER%@%SERVER%:%SRVDIR%/"Videos" .
 set HOME=
 set CWRSYNCHOME=
 set CYGWIN=
+set SERVER=
+set SRVDIR=
+set ARCHIVE=
 set PATH=%CWOLDPATH%
+set CWOLDPATH=

@@ -8,3 +8,4 @@ GOTO :END
 echo ERROR: Must pass valid NCSU ID.
 
 :END
+set ARG=

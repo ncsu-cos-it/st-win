@@ -74,3 +74,5 @@ md \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Videos
 net use s: \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username% /persistent:no
 
 :END
+set datestr=
+set result=

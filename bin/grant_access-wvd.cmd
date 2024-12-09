@@ -1,5 +1,7 @@
 @echo off
 c:
+if not exist c:\temp md \Temp
+
 cd \temp
 if exist s:\ GOTO :PERMS
 
@@ -65,3 +67,6 @@ GOTO :END
 
 :END
 echo "DONE!"
+set datestr=
+set result=
+

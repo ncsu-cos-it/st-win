@@ -17,3 +17,4 @@ for %%a in (*) do (
 )
 echo ^</body^> >> %OUTFILE%
 echo ^</html^> >> %OUTFILE%
+set OUTFILE=

@@ -26,4 +26,7 @@ rsync -rltvzpog "%SRVDIR%/Videos" .
 set HOME=
 set CWRSYNCHOME=
 set CYGWIN=
+set ARCHIVE=
+set SRVDIR=
 set PATH=%CWOLDPATH%
+set CWOLDPATH=

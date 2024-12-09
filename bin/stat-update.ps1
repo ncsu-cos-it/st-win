@@ -18,3 +18,5 @@ if (Test-Path $localPath) {
     $Acl.AddAccessRule($AccessRule)
     Set-Acl $localPath $Acl
 }
+Remove-item Env:repourl
+Remove-item Env:localPath

@@ -31,5 +31,5 @@ set HOME=
 set CWRSYNCHOME=
 set CYGWIN=
 set PATH=%CWOLDPATH%
-
+set CWOLDPATH=
 :END

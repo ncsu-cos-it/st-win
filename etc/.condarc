@@ -1,0 +1,10 @@
+channels:
+   - defaults
+   - anaconda
+   - conda-forge
+envs_dirs:
+   - ${NCSU}\conda\envs
+pkgs_dirs:
+   - ${NCSU}\conda\pkgs
+auto_update_conda: False
+always_yes: True

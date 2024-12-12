@@ -1,6 +1,6 @@
 @echo off
 REM ***********************************************************************
-REM *** B: = NCSU Windows Share                                         ***
+REM *** L: = ST Class Directories                                       ***
 REM *** --------------------------------------------------------------- ***
 REM *** Modify UNITYID to be NCSU UNITYID if local user doesn't match   ***
 REM *** Example: set UNITYID=tbyron                                     ***

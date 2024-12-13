@@ -1,10 +1,14 @@
 channels:
-   - defaults
-   - anaconda
-   - conda-forge
+  - defaults
+  - conda-forge
+  - anaconda
+default_channels:
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+  - https://repo.anaconda.com/pkgs/msys2
 envs_dirs:
-   - ${NCSU}\conda\envs
+  - ${NCSU}\conda\envs
 pkgs_dirs:
-   - ${NCSU}\conda\pkgs
+  - ${NCSU}\conda\pkgs
 auto_update_conda: False
 always_yes: True

@@ -13,7 +13,7 @@ echo ======================================================================= > "
 echo . >> "%ARCHIVE%\%LOGFILE%"
 date /t >> "%ARCHIVE%\%LOGFILE%"
 time /t >> "%ARCHIVE%\%LOGFILE%"
-call c:\local\bin\nbackup >> "%ARCHIVE%\%LOGFILE%"
+call c:\opt\stat\bin\nbackup >> "%ARCHIVE%\%LOGFILE%"
 echo . >> "%ARCHIVE%\%LOGFILE%"
 echo ======================================================================= >> "%ARCHIVE%\%LOGFILE%"
 

@@ -12,7 +12,7 @@ set CD=C:\TEMP
 if exist M:\ (
     net use M: /delete /global  
 )
-net use M: \\wolftech.ad.ncsu.edu\cos\stat\files\shares /user:WOLFTECH\%UNITYID% /persistent:no
+net use M: \\ncsudrive.ncsu.edu\cos\stat\files\shares /user:WOLFTECH\%UNITYID% /persistent:no
 REM net use M: \\dc2isi00smb.oit.ncsu.edu\cos\stat\files\shares /user:WOLFTECH\%UNITYID% /persistent:no
 set UNITYID=
 set CD=

@@ -41,7 +41,6 @@ set result=%datestr:/=-%
 :PROFILE
 if exist "s:\Documents\.statpf" GOTO :END
 echo "Profile"
-md \\dc2isi00smb.oit.ncsu.edu\cos\stat\Profiles\%username%.v6
 Icacls  \\dc2isi00smb.oit.ncsu.edu\cos\stat\Profiles\%username%.v6 /grant:r "WOLFTECH\%USERNAME%":(OI)(CI)F /T /C /L /Q
 Icacls \\dc2isi00smb.oit.ncsu.edu\cos\stat\Profiles\%username%.v6\ /grant:r "WOLFTECH\COS-Share-ISI-Admins":(OI)(CI)F /T /C /L /Q
 

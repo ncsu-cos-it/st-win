@@ -32,7 +32,7 @@ net use s: \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username% /persistent:n
 
 :PERMS
 echo "Modifying Perms"
-if exist "\\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Documents\.stat" GOTO :END
+if exist "\\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Documents\.stat" GOTO :PROFILE
 
 set datestr=%date%
 set result=%datestr:/=-%

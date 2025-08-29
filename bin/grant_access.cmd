@@ -6,15 +6,15 @@ if not "%USERDOMAIN%"=="WOLFTECH" GOTO :END
 
 cd \temp
 if exist \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username% (
-        net use s: \\ncsudrive.ncsu.edu\cos\stat\Redirect\%username%
+    net use s: \\ncsudrive.ncsu.edu\cos\stat\Redirect\%username%
 )
 if exist s:\ GOTO :PERMS
 
 :SDRIVE
 echo "SDrive"
 md \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%
-Icacls  \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username% /grant:r "WOLFTECH\COS-Share-ISI-Admins":F /T /C /Q
-Icacls  \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username% /grant:r "WOLFTECH\%USERNAME%":(NP)F /T /C /Q
+Icacls  \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username% /grant:r "WOLFTECH\COS-Share-ISI-Admins":(OI)(CI)F /T /C /L /Q
+Icacls  \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username% /grant:r "WOLFTECH\%USERNAME%":(OI)(CI)F /T /C /L /Q
 md \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\AppData
 md \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Contacts
 md \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Desktop
@@ -46,7 +46,7 @@ if exist "s:\Documents\.statpf" GOTO :END
 echo "Profile"
 md \\dc2isi00smb.oit.ncsu.edu\cos\stat\Profiles\%username%.v6
 Icacls  \\dc2isi00smb.oit.ncsu.edu\cos\stat\Profiles\%username%.v6 /grant:r "WOLFTECH\%USERNAME%":(OI)(CI)F /T /C /L /Q
-Icacls \\dc2isi00smb.oit.ncsu.edu\cos\stat\Profiles\%username%.v6\ /grant "WOLFTECH\COS-Share-ISI-Admins":(OI)(CI)F /T /C /L /Q
+Icacls \\dc2isi00smb.oit.ncsu.edu\cos\stat\Profiles\%username%.v6\ /grant:r "WOLFTECH\COS-Share-ISI-Admins":(OI)(CI)F /T /C /L /Q
 
 set datestr=%date%
 set result=%datestr:/=-%

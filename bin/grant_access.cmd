@@ -2,8 +2,6 @@
 c:
 if not exist c:\temp md \Temp
 
-if not "%USERDOMAIN%"=="WOLFTECH" GOTO :END
-
 cd \temp
 if exist \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username% (
     net use s: \\ncsudrive.ncsu.edu\cos\stat\Redirect\%username%
@@ -34,12 +32,11 @@ net use s: \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username% /persistent:n
 
 :PERMS
 echo "Modifying Perms"
-if exist "s:\Documents\.stat" GOTO :PROFILE
+if exist "\\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Documents\.stat" GOTO :END
 
 set datestr=%date%
 set result=%datestr:/=-%
-@echo %result% > S:\Documents\.stat
-
+@echo %result% > \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Documents\.stat
 
 :PROFILE
 if exist "s:\Documents\.statpf" GOTO :END
@@ -54,7 +51,9 @@ set result=%datestr:/=-%
 echo "...[Finishing]"
 GOTO :END
 
+
 :END
 echo "DONE!"
 set datestr=
 set result=
+

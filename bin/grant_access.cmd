@@ -1,55 +1,57 @@
 @echo off
 c:
 if not exist c:\temp md \Temp
-
 cd \temp
-if exist \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username% (
-    net use s: \\ncsudrive.ncsu.edu\cos\stat\Redirect\%username%
+
+if not %USERDOMAIN%=="WOLFTECH" GOTO :END
+
+if exist \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username% (
+	net use s: \\ncsudrive.ncsu.edu\cos\stat\redirect\%username%
 )
 if exist s:\ GOTO :PERMS
 
 :SDRIVE
 echo "SDrive"
-md \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%
-Icacls  \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username% /grant:r "WOLFTECH\COS-Share-ISI-Admins":(OI)(CI)F /T /C /L /Q
-Icacls  \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username% /grant:r "WOLFTECH\%USERNAME%":(OI)(CI)F /T /C /L /Q
-md \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\AppData
-md \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Contacts
-md \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Desktop
-md \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Documents
-md \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Documents\www
-Icacls \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Documents\www /grant:r "WOLFTECH\STAT.web.service":(OI)(CI)RX /T /C /L /Q
-md \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Downloads
-md \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Favorites
-md \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Links
-md \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Music
-md \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Pictures
-md \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\"Saved Games"
-md \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\"Start Menu"
-md \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Searches
-md \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Videos
-net use s: \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username% /persistent:no
+md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%
+md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\AppData
+md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Contacts
+md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Desktop
+md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Documents
+md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Documents\www
+md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Downloads
+md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Favorites
+md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Links
+md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Music
+md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Pictures
+md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\"Saved Games"
+md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\"Start Menu"
+md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Searches
+md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Videos
+net use s: \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username% /persistent:no
 
 :PERMS
 echo "Modifying Perms"
-if exist "\\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Documents\.stat" GOTO :PROFILE
+if exist "\\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Documents\.stat" GOTO :PROFILE
+Icacls \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username% /inheritance:r
+Icacls \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username% /grant:r "WOLFTECH\COS-Share-ISI-Admins":(OI)(CI)F /T /C /L /Q
+Icacls \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username% /grant:r "WOLFTECH\%USERNAME%":(OI)(CI)F /T /C /L /Q
+Icacls \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username% /grant:r "ISO_PROV-NAS-Filesystem-Admins":(OI)(CI)F /T /C /L /Q
+Icacls \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username% /grant:r "WOLFTECH\STAT.web.service":R 
+Icacls \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Documents /grant:r "WOLFTECH\STAT.web.service":R 
+Icacls  \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username% /grant:r "WOLFTECH\COS-Share-ISI-Admins":(OI)(CI)F /T /C /L /Q
+echo "....[Finishing]"
 
 set datestr=%date%
 set result=%datestr:/=-%
-@echo %result% > \\dc2isi00smb.oit.ncsu.edu\cos\stat\Redirect\%username%\Documents\.stat
+@echo %result% > \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Documents\.stat
 
 :PROFILE
-if exist "s:\Documents\.statpf" GOTO :END
 echo "Profile"
-Icacls  \\dc2isi00smb.oit.ncsu.edu\cos\stat\Profiles\%username%.v6 /grant:r "WOLFTECH\%USERNAME%":(OI)(CI)F /T /C /L /Q
-Icacls \\dc2isi00smb.oit.ncsu.edu\cos\stat\Profiles\%username%.v6\ /grant:r "WOLFTECH\COS-Share-ISI-Admins":(OI)(CI)F /T /C /L /Q
-
+if exist "\\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Documents\.statpf" GOTO :END
+Icacls \\dc2isi00smb.oit.ncsu.edu\cos\stat\Profiles\%username%.v6\ /grant "WOLFTECH\COS-Share-ISI Admins":(OI)(CI)F /T /C /L /Q
 set datestr=%date%
 set result=%datestr:/=-%
-@echo %result% > S:\Documents\.statpf
-echo "...[Finishing]"
-GOTO :END
-
+@echo %result% > \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Documents\.statpf
 
 :END
 echo "DONE!"

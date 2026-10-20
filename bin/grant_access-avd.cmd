@@ -30,14 +30,14 @@ md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Videos
 :PERMS
 echo "Modifying Perms"
 if exist "\\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Documents\.stat" GOTO :END
-Icacls \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username% /inheritance:r
+REM Icacls \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username% /inheritance:r
+Icacls  \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username% /grant:r %usernae%:(OI)(CI)F /T /C /L /Q
 Icacls \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username% /grant:r "WOLFTECH\COS-Share-ISI-Admins":(OI)(CI)F /T /C /L /Q
 Icacls \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username% /grant:r "WOLFTECH\%USERNAME%":(OI)(CI)F /T /C /L /Q
 Icacls \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username% /grant:r "ISO_PROV-NAS-Filesystem-Admins":(OI)(CI)F /T /C /L /Q
 Icacls \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username% /grant:r "WOLFTECH\STAT.web.service":R 
 Icacls \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Documents /grant:r "WOLFTECH\STAT.web.service":R 
 Icacls  \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username% /grant:r "WOLFTECH\COS-Share-ISI-Admins":(OI)(CI)F /T /C /L /Q
-Icacls  \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username% /grant:r %usernae%:(OI)(CI)F /T /C /L /Q
 echo "....[Finishing]"
 
 set datestr=%date%

@@ -10,7 +10,6 @@ if exist s:\ GOTO :PERMS
 
 :SDRIVE
 echo "SDrive"
-net use s: \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username% /persistent:no
 md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%
 md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\AppData
 md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Contacts
@@ -26,6 +25,7 @@ md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\"Saved Games"
 md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\"Start Menu"
 md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Searches
 md \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Videos
+net use s: \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username% /persistent:no
 
 :PERMS
 echo "Modifying Perms"

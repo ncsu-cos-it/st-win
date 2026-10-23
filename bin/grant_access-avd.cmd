@@ -3,7 +3,7 @@ c:
 if not exist c:\temp md \Temp
 
 cd \temp
-if exist \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Desktop (
+if exist \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Documents (
 	net use s: \\ncsudrive.ncsu.edu\cos\stat\redirect\%username%
 )
 if exist s:\ GOTO :PERMS

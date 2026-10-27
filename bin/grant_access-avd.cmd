@@ -2,6 +2,9 @@
 c:
 if not exist c:\temp md \Temp
 
+if not exist "c:\Users\%USERNAME%\Documents\My SAS Files\9.4" md "c:\Users\%USERNAME%\Documents\My SAS Files\9.4"
+
+
 cd \temp
 if exist \\dc2isi00smb.oit.ncsu.edu\cos\stat\redirect\%username%\Documents (
 	net use s: \\ncsudrive.ncsu.edu\cos\stat\redirect\%username%

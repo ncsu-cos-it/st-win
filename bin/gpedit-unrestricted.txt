@@ -1,0 +1,6 @@
+== gpedit.msc ==
+Computer Configuration
+- Policies
+-- -- Administrative Templates
+-- -- -- Windows Components/Windows PowerShell
+-- -- -- -- Execution Policy (Allow all scripts)
